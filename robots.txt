@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://loginova-home.ru/sitemap.xml
