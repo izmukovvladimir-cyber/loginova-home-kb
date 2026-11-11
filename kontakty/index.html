@@ -28,8 +28,8 @@ a.btn.alt{background:transparent;color:var(--ink);border:2px solid rgba(255,255,
   <h1>Натали Логинова</h1>
   <p class="role">Эксперт по недвижимости в Москве и Санкт-Петербурге</p>
   <a class="btn" href="tel:+79259237923">Позвонить</a>
-  <a class="btn" href="https://wa.me/qr/SF5S6MNPJRQ3M1">WhatsApp</a>
-  <a class="btn alt" href="tg://resolve?domain=lng_estate">Telegram</a>
+  <a class="btn" href="https://wa.me/79259237923">WhatsApp</a>
+  <a class="btn alt" id="tgbtn" href="https://t.me/lng_estate">Telegram</a>
   <p style="text-align:center;font-size:14px;margin:4px 0 0">Не открылось: <a href="https://t.me/lng_estate">t.me/lng_estate</a></p>
   <p class="phone">8 925 923-79-23</p>
   <div class="block">
@@ -41,5 +41,14 @@ a.btn.alt{background:transparent;color:var(--ink);border:2px solid rgba(255,255,
     <p>Все вопросы недвижимости, полное сопровождение сделок, бонус за каждого клиента.</p>
   </div>
 </main>
+<script>
+document.getElementById('tgbtn').addEventListener('click',function(e){
+  e.preventDefault();var web='https://t.me/lng_estate';
+  if(/Android/i.test(navigator.userAgent)){location.href='intent://resolve?domain=lng_estate#Intent;scheme=tg;S.browser_fallback_url='+encodeURIComponent(web)+';end';return;}
+  var t=setTimeout(function(){location.href=web;},1500);
+  window.addEventListener('pagehide',function(){clearTimeout(t);});
+  location.href='tg://resolve?domain=lng_estate';
+});
+</script>
 </body>
 </html>
